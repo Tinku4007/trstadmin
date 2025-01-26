@@ -10,8 +10,8 @@ function App() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("http://localhost:8000/api/get/key");
-      // const res = await fetch("https://trustbackend.onrender.com/api/get/key");
+      // const res = await fetch("http://localhost:8000/api/get/key");
+      const res = await fetch("https://trustbackend.onrender.com/api/get/key");
       const result = await res.json();
       if (result.isSuccess) {
         setData(result.keys);
@@ -28,7 +28,7 @@ function App() {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:8000/api/key/delete/${id}`, {
+      const res = await fetch(`https://trustbackend.onrender.com/api/key/delete/${id}`, {
         method: "DELETE",
       });
       const result = await res.json();
